@@ -87,6 +87,7 @@ namespace MonoUI
             game.Window.TextInput += EditText;
             textBuilder = new StringBuilder(text);
             MaxCharacters = ushort.MaxValue;
+            Indentation = 0;
 
             maxTextLineTime = 500;
             maxKeyTime = 400;
@@ -96,7 +97,7 @@ namespace MonoUI
             TextColor = textColor;
 
             blinkingPipe = true;
-            OverFlow = true;
+            OverFlow = false;
 
             textLine = Tool.CreateTexture(game.GraphicsDevice, 1, (int)font.MeasureString("|").Y, Color.Black);
         }
@@ -186,11 +187,11 @@ namespace MonoUI
                     break;
             }
 
-            if (font.Characters.Contains<char>(e.Character) == false)
+            if (font.Characters.Contains<char>(e.Character) == false || IsSpaceFree(e.Character) == false || textBuilder.Length >= MaxCharacters)
             {
                 return;
             }
-            else if (textBuilder.Length < MaxCharacters)
+            else
             {
                 textBuilder.Insert(CharacterIndex, e.Character);
                 CharacterIndex++;
@@ -237,6 +238,20 @@ namespace MonoUI
         }
 
         /// <summary>
+        /// Returns true if space is available in the text box. Otherwise returns false.
+        /// </summary>
+        /// <returns></returns>
+        private bool IsSpaceFree(char character)
+        {
+            if (OverFlow == true)
+            {
+                return true;
+            }
+
+            return font.MeasureString(Text + character).X + Indentation < Texture.Width * Scale;
+        }
+
+        /// <summary>
         /// Draws the the text box.
         /// </summary>
         /// <param name="spriteBatch">The sprite batch that draws the texture.</param>
@@ -254,15 +269,6 @@ namespace MonoUI
                 else if (Input.IsLeftMouseButtonPressed == true)
                 {
                     isEditModeOn = false;
-                }
-
-                if (OverFlow == false)
-                {
-                    if (font.MeasureString(Text).X > Texture.Width * Scale || font.MeasureString(Text).Y > Texture.Height * Scale)
-                    {
-                        Debug.WriteLine("Text field overflow.");
-                        return;
-                    }
                 }
 
                 if (isEditModeOn == true)
