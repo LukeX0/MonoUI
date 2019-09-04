@@ -240,6 +240,7 @@ namespace MonoUI
         /// <summary>
         /// Returns true if space is available in the text box. Otherwise returns false.
         /// </summary>
+        /// <param name="character">The new character that is to be added, for measurements.</param>
         /// <returns></returns>
         private bool IsSpaceFree(char character)
         {
