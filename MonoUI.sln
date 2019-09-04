@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoUI", "MonoUI.csproj", "{67C86D9D-6F6B-4B86-AC10-798993A17C5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoUI", "MonoUI\MonoUI.csproj", "{B496CFCC-8BB8-4F84-B888-E67AFBE0CF91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{67C86D9D-6F6B-4B86-AC10-798993A17C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67C86D9D-6F6B-4B86-AC10-798993A17C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67C86D9D-6F6B-4B86-AC10-798993A17C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67C86D9D-6F6B-4B86-AC10-798993A17C5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B496CFCC-8BB8-4F84-B888-E67AFBE0CF91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B496CFCC-8BB8-4F84-B888-E67AFBE0CF91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B496CFCC-8BB8-4F84-B888-E67AFBE0CF91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B496CFCC-8BB8-4F84-B888-E67AFBE0CF91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
